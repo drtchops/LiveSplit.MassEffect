@@ -1,0 +1,12 @@
+{
+	"folders":
+	[
+		{
+			"follow_symlinks": true,
+			"path": "/home/ian/work/apps/LiveSplit.MassEffect"
+		}
+	],
+    "settings": {
+        "default_line_ending": "windows"
+    }
+}
