@@ -22,12 +22,12 @@ namespace LiveSplit.MassEffect
 
         // private enum ExpectedDllSizes
         // {
-        //     MassEffectSteam = 29642752,
+        //     MassEffectSteam = 21905408,
         // }
 
         public GameMemory()
         {
-            _isLoadingPtr = new DeepPointer(0x1876708); // == 1 if a loadscreen is happening
+            _isLoadingPtr = new DeepPointer(0x1263BDC); // == 1 if a loadscreen is happening
 
             _ignorePIDs = new List<int>();
         }
@@ -155,6 +155,8 @@ namespace LiveSplit.MassEffect
             {
                 return null;
             }
+
+            Debug.WriteLine(String.Format("[NoLoads] Found Mass Effect with size {0}", game.MainModule.ModuleMemorySize));
 
             // if (game.MainModule.ModuleMemorySize != (int)ExpectedDllSizes.MassEffectSteam && game.MainModule.ModuleMemorySize != (int)ExpectedDllSizes.MassEffectCracked)
             // {

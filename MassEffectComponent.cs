@@ -42,12 +42,17 @@ namespace LiveSplit.MassEffect
 
         void gameMemory_OnLoadStarted(object sender, EventArgs e)
         {
-            _state.IsGameTimePaused = true;
+            _timer.CurrentState.IsGameTimePaused = true;
         }
 
         void gameMemory_OnLoadFinished(object sender, EventArgs e)
         {
-            _state.IsGameTimePaused = false;
+            _timer.CurrentState.IsGameTimePaused = false;
         }
+
+        public override void Update(IInvalidator invalidator, LiveSplitState state, float width, float height, LayoutMode mode) { }
+        public override XmlNode GetSettings(XmlDocument document) { return document.CreateElement("Settings"); }
+        public override Control GetSettingsControl(LayoutMode mode) { return null;  }
+        public override void SetSettings(XmlNode settings) { }
     }
 }
